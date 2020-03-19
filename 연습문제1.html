@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	border-color : white;
+	box-shadow: 5px 5px 5px 0px;
+	margin:0 auto;
+	
+}
+
+table tr:nth-child(2n+1){
+	background-color: #E6FFFF;
+}
+table tr:nth-child(2n){
+	background-color: #FFFFD2;
+}
+table tr th{
+	width:100px;
+	height:50px;
+	border:white;	
+}
+
+
+
+</style>
+</head>
+<body>
+	<h1 align="center">Script APT</h1>
+	<br>
+	<hr width=70%>
+
+	<script type="text/javascript">
+	document.write("<table border='1'>");
+	
+	var floor = prompt('층수를 입력하세요');
+	var x,y;
+	for(x=floor;x>=1;x--){
+	document.write("<tr>");
+		for(y=1;y<6;y++){
+			document.write("<th>"+x+"0"+y+"호</th>");
+		}document.write("</tr>");
+		
+	}
+	
+	document.write("</table>");
+	</script>
+
+
+
+
+
+
+
+</body>
+</html>

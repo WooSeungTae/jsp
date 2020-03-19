@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+.frame{
+	margin:0 auto;
+	border-color : black;
+	width : 500px;
+	height: 750px;
+	background-color: black;
+	text-align: center;
+	box-shadow: 5px 5px 5px 0;
+
+}
+table tr {
+	border-color: black;
+}
+
+table tr td{
+	border-color: black;
+	height: 60px;
+}
+#image{
+	width : 500px;
+	height: 700px;
+}
+
+#button {
+	margin : 0 10px;
+	background-color: transparent;
+	box-shadow: 3px 3px 3px 0px;
+	color: white;
+	width:120px;
+	height: 40px;
+}
+#button:hover {
+	background-color: yellow;
+	color: black;
+	box-shadow: windowframe;
+}
+</style>
+
+</head>
+<body>
+
+<div align="center" ><font size="80px"><b>Script Image</b></font></div>
+<hr width="45%" >
+	<script type="text/javascript">
+	var x=1;
+	function next(){
+		x++;		
+		if(x>8){
+			x=1;
+			document.getElementById("image").src = "resources/images/최근상품0"+x+".jpg"; 
+			return ;
+		}
+		document.getElementById("image").src = "resources/images/최근상품0"+x+".jpg"; 	
+	}
+	function before(){
+		x--;
+		if(x<1){
+			x=8;
+			document.getElementById("image").src = "resources/images/최근상품0"+x+".jpg"; 
+			return ;
+		}
+		document.getElementById("image").src = "resources/images/최근상품0"+x+".jpg"; 
+	}
+	</script>
+		<table class="frame" border="1">
+		<tr><td colspan="2"><img id="image" src = "resources/images/최근상품01.jpg" ></td></tr>	
+		<tr><td align="right"><input id="button" type="button"  onclick="next()" value="다음사진"></td>
+		<td align="left"><input id="button" type="button"  onclick="before()" value="이전사진"></td>
+		</table>
+	
+	
+	
+
+</body>
+</html>

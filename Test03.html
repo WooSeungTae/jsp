@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+.image{ width:100px; height:100px; }
+</style>
+<script type="text/javascript">
+
+
+	function add(){var sum=1; return sum;}
+	function add(x){var sum=x+1; return sum;}
+	function add(x,y){var sum=x+y; return sum;}
+	function add(x,y,z){var sum=x+y+z; return sum;}
+
+	document.write("함수 호출 인자 없음 : "+add()+"<p/>");
+	document.write("함수 호출 인자 부족 : "+add(1)+"<p/>");
+	document.write("함수 호출 인자 부족 : "+add(2,3)+"<p/>");
+	document.write("정상적인 함수 호출: "+add(4,5,6)+"<p/>");
+	document.write("7,8,9만 인자값으로 적용 : "+add(7,8,9,10)+"<p/>"); //함수는 오버로딩 안됨 마지막에 된걸로만 사용하고 없는 인자값에 대해서는 NaN로 나옴 , 넘는건 있는거 까지만 적용됨
+
+
+	
+</script>
+	<script>
+        function add() {
+            var i, sum=0;
+            for(i=0; i<arguments.length; i++) {
+	            sum=sum+arguments[i];
+	            document.write("arguments : " + arguments[i] + " , ");
+	            document.write("arguments.length : "+ arguments.length +"   ")
+	        }
+            document.write("<br>수행 결과 : " + sum + "<p/>"); 	 
+        }
+        add(2, 3); add(2, 3, 4); add(4, 5, 6, 7, 8);   
+        add(1, 2, 3, 4, 5, 6, 7, 8, 9, 10); 
+    </script>
+	
+	
+	
+
+
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+function display01(){
+document.getElementById("myImage").src = "resources/images/맛집.png"; }
+</script>
+</head>
+<body>
+<img id="myImage" src="resources/images/16.gif" onclick="display01()">
+<img class="image" src="resources/images/16.gif">
+
+<hr>
+
+<script type="text/javascript">
+		function display(){
+			name = document.getElementById('name').value; // document.getElementById('name').value :현재 페이지에 대해서name 이라는 아이디를 가지고 오겠다.
+			document.getElementById('name').value = ""; // document.getElementById('name').value >> 요기 공간을 ""로 넣겠다.
+			document.getElementById('name2').value = name; //document.getElementById('name2').value 에 name을 넣겠다.
+		}
+	</script>
+	name : <input type="text" id="name"><br>
+	name2 : <input type="text" id="name2"><br>
+	<input type="button" onclick="display()" value="click">
+<hr>
+</body>
+</html>
